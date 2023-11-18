@@ -80,7 +80,7 @@ int main(int argc, char * argv[])
    // search for the command for the key pressed
    while(1)
    {
-      if ( ( arg = fscanf(fd2, "%02X %02X %02X %02X %s", &data2[0], &data2[1], &data2[2], &data2[3], command)) == EOF)
+      if ( ( arg = fscanf(fd2, "%02X %02X %02X %02X %254s", &data2[0], &data2[1], &data2[2], &data2[3], command)) == EOF)
        {
         break;
        }
