@@ -17,6 +17,7 @@ extern int errno;
 
 #define DATA_MAX 4
 
+
 int main(int argc, char * argv[])
 {
   int i;
