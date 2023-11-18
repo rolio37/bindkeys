@@ -5,7 +5,7 @@ architecture="$1"
 compilation="$2"
 compiler="cc"
 sources="bindkeys.c"
-binbase="binkeys"
+binbase="bindkeys"
 
 
 if [ "$1" = "help" ]; then
