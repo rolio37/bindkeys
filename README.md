@@ -1,2 +1,2 @@
 # bindkeys
-example : ./binkeys64 /dev/hidraw8 test.conf
+example : ./bindkeys64 /dev/hidraw8 test.conf
