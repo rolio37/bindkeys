@@ -90,7 +90,7 @@ int main(int argc, char * argv[])
        if ((unsigned int)data[0] == data2[0] && (unsigned int)data[1] == data2[1] && (unsigned int)data[2] == data2[2] && (unsigned int)data[3] == data2[3] )
        {
           fprintf(stdout, "Command -> %s", command);
-          system(command);
+          system((const char*)command);
           break;
        }
        
