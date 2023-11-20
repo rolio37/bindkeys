@@ -41,7 +41,7 @@ $ cat test.conf
 
 Create a script to simulate the touch:
 $ cat XF86AudioPlay.sh
-##!/bin/sh
+#!/bin/sh
 xdotool key XF86AudioPlay
 
 $ mv XF86AudioPlay.sh ~/bin
