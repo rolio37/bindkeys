@@ -1,9 +1,9 @@
 how it works under FreeBSD:
 you need to load the hidraw module
-## kldload hidraw
+# kldload hidraw
 
 spot the right hidraw:
-## dmesg|grep hidraw
+# dmesg|grep hidraw
 hidraw0: <AsusTek Computer Inc. AURA LED Controller Raw HID Device> on hidbus0
 hidraw1: <Logitech USB Receiver Raw HID Device> on hidbus1
 hidraw2: <Logitech USB Receiver Raw HID Device> on hidbus2
@@ -16,10 +16,10 @@ hidraw8: <Logitech Logitech USB Keyboard Raw HID Device> on hidbus8
 hidraw9: <SWITCH CO.,LTD. Pro Controller Raw HID Device> on hidbus9
 
 Change rights to hidraw:
-## chown myuser:mysuser /dev/hidraw?
+# chown myuser:mysuser /dev/hidraw?
 
 install xdotool for key simulation
-## pkg install xdotool
+# pkg install xdotool
 
 Prepare a bin directory for the user:
 $ mkdir ~/bin
