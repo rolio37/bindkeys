@@ -85,7 +85,7 @@ int main(int argc, char * argv[])
         break;
        }
        
-       if (arg != 9) break; 
+       if (arg != DATA_MAX+1) break; 
        
        if ((unsigned int)data[0] == data2[0] && (unsigned int)data[1] == data2[1] && (unsigned int)data[2] == data2[2] && (unsigned int)data[3] == data2[3] && (unsigned int)data[4] == data2[4] && (unsigned int)data[5] == data2[5] && (unsigned int)data[6] == data2[6] && (unsigned int)data[7] == data2[7])
        {
