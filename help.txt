@@ -29,15 +29,15 @@ $ cp bindkeys64 ~/bin
 Locate the button codes:
 $ touch test.conf
 $ bindkeys64 /dev/hidraw? test.conf
-bindkeys v0.1
-Key : 01 05 00 00 
-Key : 01 00 00 00 
+bindkeys v0.2
+datasize = 3, Key : 01 05 00 00 00 00 00 00 
+datasize = 3, Key : 01 00 00 00 00 00 00 00
 
 For example on this keyboard the code key XF86AudioPlay is 01 05 00 00
 
 Example files for the XF86AudioPlay button recognized under xev:
 $ cat test.conf
-01 05 00 00 XF86AudioPlay.sh
+01 05 00 00 00 00 00 00 XF86AudioPlay.sh
 
 Create a script to simulate the touch:
 $ cat XF86AudioPlay.sh
@@ -49,9 +49,9 @@ $ chmod u+x ~/bin/XF86AudioPlay.sh
 
 Now restart bindkeys64:
 $ bindkeys64 /dev/hidraw? test.conf
-bindkeys v0.1
-Key : 01 05 00 00 Command -> XF86AudioPlay.sh
-Key : 01 00 00 00 
+bindkeys v0.2
+datasize = 3, Key : 01 05 00 00 00 00 00 00 Command -> XF86AudioPlay.sh
+datasize = 3, Key : 01 00 00 00 00 00 00 00
 
 ok the script is launched for the XF86AudioPlay button
 Now test under xev or gimp or audacious...

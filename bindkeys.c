@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 extern int errno;
 
-#define DATA_MAX 4
+#define DATA_MAX 8
 
 
 int main(int argc, char * argv[])
@@ -24,12 +24,12 @@ int main(int argc, char * argv[])
   int fd;
   FILE * fd2;
   int arg;
-  unsigned char data[4];
-  unsigned int data2[4];
+  unsigned char data[DATA_MAX];
+  unsigned int data2[DATA_MAX];
   unsigned char command[255];
   ssize_t datasize;
 
-  fprintf(stdout, "bindkeys v0.1\n");
+  fprintf(stdout, "bindkeys v0.2\n");
   
   if (argc < 3)
   {
@@ -68,7 +68,7 @@ int main(int argc, char * argv[])
      return 1;
    }
      
-   fprintf(stdout, "Key : ");   
+   fprintf(stdout, "datasize = %lu, Key : ", datasize);   
       
   for(i=0; i< DATA_MAX; i++)
   {
@@ -80,14 +80,14 @@ int main(int argc, char * argv[])
    // search for the command for the key pressed
    while(1)
    {
-      if ( ( arg = fscanf(fd2, "%02X %02X %02X %02X %254s", &data2[0], &data2[1], &data2[2], &data2[3], command)) == EOF)
+      if ( ( arg = fscanf(fd2, "%02X %02X %02X %02X %02X %02X %02X %02X %254s", &data2[0], &data2[1], &data2[2], &data2[3], &data2[4], &data2[5], &data2[6], &data2[7], command)) == EOF)
        {
         break;
        }
        
-       if (arg != 5) break; 
+       if (arg != 9) break; 
        
-       if ((unsigned int)data[0] == data2[0] && (unsigned int)data[1] == data2[1] && (unsigned int)data[2] == data2[2] && (unsigned int)data[3] == data2[3] )
+       if ((unsigned int)data[0] == data2[0] && (unsigned int)data[1] == data2[1] && (unsigned int)data[2] == data2[2] && (unsigned int)data[3] == data2[3] && (unsigned int)data[4] == data2[4] && (unsigned int)data[5] == data2[5] && (unsigned int)data[6] == data2[6] && (unsigned int)data[7] == data2[7])
        {
           fprintf(stdout, "Command -> %s", command);
           system((const char*)command);
