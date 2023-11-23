@@ -18,7 +18,7 @@ hidraw9: <SWITCH CO.,LTD. Pro Controller Raw HID Device> on hidbus9
 Change rights to hidraw:
 # chown myuser:myuser /dev/hidraw?
 
-install xdotool for key simulation
+install xdotool for key simulation:
 # pkg install xdotool
 
 Prepare a bin directory for the user:
