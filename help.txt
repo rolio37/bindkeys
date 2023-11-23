@@ -16,7 +16,7 @@ hidraw8: <Logitech Logitech USB Keyboard Raw HID Device> on hidbus8
 hidraw9: <SWITCH CO.,LTD. Pro Controller Raw HID Device> on hidbus9
 
 Change rights to hidraw:
-# chown myuser:mysuser /dev/hidraw?
+# chown myuser:myuser /dev/hidraw?
 
 install xdotool for key simulation
 # pkg install xdotool
@@ -33,7 +33,7 @@ bindkeys v0.2
 datasize = 3, Key : 01 05 00 00 00 00 00 00 
 datasize = 3, Key : 01 00 00 00 00 00 00 00
 
-For example on this keyboard the code key XF86AudioPlay is 01 05 00 00
+For example on this keyboard the code key XF86AudioPlay is 01 05 00 00 00 00 00 00
 
 Example files for the XF86AudioPlay button recognized under xev:
 $ cat test.conf
